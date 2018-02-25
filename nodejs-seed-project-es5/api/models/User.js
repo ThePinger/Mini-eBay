@@ -21,5 +21,14 @@ userSchema.pre('save', async function(next) {
       next(error);
     }
   });
+
+  userSchema.methods.isValidPassword = async function(newPassword) {
+      // check(hash(passwordentered) == storedpassword)
+    try {
+      return await bcrypt.compare(newPassword, this.password);
+    } catch(error) {
+      throw new Error(error);
+    }
+  }
   
 mongoose.model('User', userSchema);
