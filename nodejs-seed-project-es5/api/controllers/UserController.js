@@ -3,28 +3,50 @@ var moment      = require('moment');
 var Validations = require('../utils/Validations');
 var User        = mongoose.model('User');
 
-module.exports.signUp = function(req, res, next) {
-  var valid =
-    req.body.username &&
-    Validations.isString(req.body.username) &&
-    req.body.password &&
-    Validations.isString(req.body.password) &&
-    req.body.email;
-  if (!valid) {
-    return res.status(422).json({
-      err: null,
-      msg: 'Username, password and email are required fields.',
-      data: null
+module.exports = 
+{
+  signUp: async (req, res, next) =>
+  {
+    var userName     = req.body.username;
+    var userEmail    = req.body.email;
+    var userPassword = req.body.password;
+    var valid =
+      userName &&
+      Validations.isString(userName) &&
+      userPassword &&
+      Validations.isString(userPassword) &&
+      userEmail;
+
+    if (!valid) 
+    {
+      return res.status(422).json({
+        err: null,
+        msg: 'Username, password and email are required fields.',
+        data: null
+      });
+    }
+
+    const usernameAlreadyExists =  await User.findOne({ "username": userName });
+      if(usernameAlreadyExists)
+      {
+        return res.status(403).json({ error: "Username already exists!" });
+      }
+      
+    const emailAlreadyExists =  await User.findOne({ "email": userEmail });
+      if(emailAlreadyExists)
+      {
+        return res.status(403).json({ error: "Email already exists!" });
+      }
+
+    User.create(req.body, function(err, user) {
+      if (err) {
+        return next(err);
+      }
+      res.status(201).json({
+        err: null,
+        msg: 'SignUp was successfull.',
+        data: user
+      });
     });
   }
-  User.create(req.body, function(err, user) {
-    if (err) {
-      return next(err);
-    }
-    res.status(201).json({
-      err: null,
-      msg: 'SignUp was successfull.',
-      data: user
-    });
-  });
 };
