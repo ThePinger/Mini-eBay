@@ -8,8 +8,7 @@ module.exports.signUp = function(req, res, next) {
     req.body.username &&
     Validations.isString(req.body.username) &&
     req.body.password &&
-    Validations.isString(req.body.password) &&
-    req.body.birthday;
+    Validations.isString(req.body.password);
   if (!valid) {
     return res.status(422).json({
       err: null,
