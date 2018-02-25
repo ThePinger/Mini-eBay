@@ -8,11 +8,12 @@ module.exports.signUp = function(req, res, next) {
     req.body.username &&
     Validations.isString(req.body.username) &&
     req.body.password &&
-    Validations.isString(req.body.password);
+    Validations.isString(req.body.password) &&
+    req.body.email;
   if (!valid) {
     return res.status(422).json({
       err: null,
-      msg: 'Username, password and birthday are required fields.',
+      msg: 'Username, password and email are required fields.',
       data: null
     });
   }
