@@ -2,6 +2,10 @@ var mongoose    = require('mongoose');
 var moment      = require('moment');
 var Validations = require('../utils/Validations');
 var User        = mongoose.model('User');
+let jwt = require('jsonwebtoken');
+let express = require('express');
+let app = express();
+let config = require('../config/Config')
 
 module.exports = 
 {
@@ -48,5 +52,39 @@ module.exports =
         data: user
       });
     });
+  },
+
+  authenticate: async (req, res, next) =>
+  {
+    const user = await User.findOne({ "username": req.body.username });
+    if (!user)
+    {
+      res.json({ success: false, message: 'Authentication failed. User not found.' });
+    }
+    else if (user)
+    {
+      if (!user.isValidPassword(req.body.password))
+      {
+        res.json({ success: false, message: 'Authentication failed. Wrong password.' });
+      }
+      else
+      {
+        console.log(user.id);
+        const tokenPayload = 
+        {
+          id: user.id
+        };
+        var token = jwt.sign(tokenPayload, config.SECRET, {
+          
+          expiresInMinutes: 1440 // expires in 24 hours
+        });
+        console.log(token);
+        // return token
+        res.status(200).json({
+          token: token
+        });
+      }
+    }
+
   }
 };

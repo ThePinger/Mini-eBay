@@ -13,5 +13,6 @@ router.delete('/product/deleteProduct/:productId', productCtrl.deleteProduct);
 
 //---------------------------------User Routes------------------------------------
 router.post('/user/signUp', userCtrl.signUp);
+router.post('/auth', userCtrl.authenticate);
 
 module.exports = router;

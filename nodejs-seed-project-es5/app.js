@@ -1,6 +1,7 @@
 require('./api/config/DBConnection');
 var express = require('express'),
   logger = require('morgan'),
+  jwt = require('jsonwebtoken'),
   cors = require('cors'),
   helmet = require('helmet'),
   compression = require('compression'),
