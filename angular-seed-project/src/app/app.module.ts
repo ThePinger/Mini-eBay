@@ -8,9 +8,11 @@ import { ThemeModule } from './@theme/theme.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { ParentComponent } from './parent/parent.component';
+import { DefaultComponent } from './default/default.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ParentComponent, DefaultComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

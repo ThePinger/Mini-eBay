@@ -1,21 +1,47 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './authentication/login/login.component';
+import { ParentComponent } from './parent/parent.component';
+import { DefaultComponent } from './default/default.component';
 
 const routes: Routes = [
   {
-    path: 'dashboard',
-    loadChildren: './dashboard/dashboard.module#DashboardModule'
+    path: 'user',
+    component: ParentComponent,
+    children: [
+      {
+        path: 'store',
+        loadChildren: './store/store.module#StoreModule'
+      },
+      {
+        path: 'dashboard',
+        loadChildren: './dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'start',
+        redirectTo: 'dashboard'
+      }
+    ]
   },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: '**', redirectTo: 'dashboard' }
+  {
+    path: '',
+    component: DefaultComponent,
+    children: [
+      {
+        path: 'auth',
+        loadChildren: './authentication/authentication.module#AuthenticationModule'
+      }
+    ]
+  }
 ];
 
 const config: ExtraOptions = {
-  useHash: true
+  useHash: true,
+  onSameUrlNavigation: 'reload'
 };
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: []
 })
