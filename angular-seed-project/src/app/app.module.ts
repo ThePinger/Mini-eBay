@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
 import { DefaultComponent } from './default/default.component';
 
+import { SignupService } from './signup.service'
+
+
 @NgModule({
   declarations: [AppComponent, ParentComponent, DefaultComponent],
   imports: [
@@ -21,6 +24,6 @@ import { DefaultComponent } from './default/default.component';
     AppRoutingModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, SignupService ]
 })
 export class AppModule {}
