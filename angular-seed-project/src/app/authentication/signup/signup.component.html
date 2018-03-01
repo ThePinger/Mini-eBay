@@ -21,16 +21,21 @@
           <input #password (keyup)="0" _ngcontent-c31="" class="form-control" placeholder="Password" type="password">
         </div>
 
-        <!-- <p> {{eMail}} </p>
-        <p> {{userName}} </p>
-        <p> {{passWord}} </p> -->
-       
+        
         
 <button type="button"  
         class="btn btn-hero-success main-btn" 
         (click)="signUp(email.value, username.value,password.value)" >Sign Up
 </button>
 
+    <!-- <div *ngIf="user">
+        <p> {{user.email}} </p>
+        <p> {{user.password}} </p>
+        <p> {{user.username}} </p>
+    </div> -->
 
+    <div *ngIf="signupResponse">
+        <p>{{signupResponse}}</p>
+    </div>
 
-
+    

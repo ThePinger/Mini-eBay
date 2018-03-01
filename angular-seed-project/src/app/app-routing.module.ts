@@ -32,7 +32,8 @@ const routes: Routes = [
         loadChildren: './authentication/authentication.module#AuthenticationModule'
       }
     ]
-  }
+  },
+  
 ];
 
 const config: ExtraOptions = {

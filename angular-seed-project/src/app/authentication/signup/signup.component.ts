@@ -2,6 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { SignupService } from '../../signup.service'
 
+import { User } from "./User";
+
+import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'
+
+
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,21 +19,45 @@ export class SignupComponent implements OnInit {
 
   values = '';
 
-    eMail ='';   
-    userName = '';
-    passWord = '';
-  constructor() { } // injext signUp service
+  signupResponse ;
+  username;
+  password  ;
+  email  ;
+  expect;
+  it ; 
+  emsg; 
 
-  ngOnInit() {
+  constructor(private signupService : SignupService , private route : Router , private http :HttpClient ) { } 
+
+  ngOnInit() {}
 
 
+ /* getMessg(){
+    this.http.request('http://localhost:4200/auth/signup')
+    .subscribe(res => { console.log(res.text()) })
+  }*/
+
+  async signUp(mail : string, name : string, pass : string){
+      this.email= mail;
+      this.username =name;
+      this.password = pass;
+
+      await this.signupService.SignUpResponse(this.username,this.email ,this.password)
+      .subscribe(
+      (response => {this.route.navigate(['/auth'])}),
+      (res => {this.signupResponse = "SignUP failed try again"}));
+
+
+      //setTimeout( (this.test = this.signupResponse.msg) ,1000);
+        
+      // await this.authService.login(username, password).
+      // subscribe(
+      // (response => {this.router.navigate(['/user'])}),
+      //  (err => {this.loginResponse = "Username or Password not Correct"}));
+     // this.route.navigate(['auth/login']);
+      //setInterval(this.redirectTo,2000);
+
+      //const req = httpTestingController.expectOne(testUrl);
+   }    
   }
 
-  signUp(mail : string, name : string, pass : string){
-      this.eMail = mail;
-      this.userName = name;
-      this.passWord = pass;
-
-  }
-  
-}
