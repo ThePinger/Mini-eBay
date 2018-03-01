@@ -11,4 +11,9 @@ export class AuthService {
   {
     return this.http.post(environment.apiUrl + 'user/logIn', {username: username, password: password});
   }
+
+  logout()
+  {
+    return this.http.get(environment.apiUrl + 'user/logOut');
+  }
 }
