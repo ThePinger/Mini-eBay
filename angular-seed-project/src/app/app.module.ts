@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
 import { DefaultComponent } from './default/default.component';
+import { AuthService } from './service/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, ParentComponent, DefaultComponent],
@@ -18,9 +20,10 @@ import { DefaultComponent } from './default/default.component';
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AuthService]
 })
 export class AppModule {}
