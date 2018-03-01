@@ -44,7 +44,7 @@ module.exports =
       }
       res.status(201).json({
         err: null,
-        msg: 'SignUp successfull.',
+        msg: 'SignUp successful.',
         data: user
       });
     });
@@ -70,7 +70,7 @@ module.exports =
               req.session.user = user.username;
               return res.status(201).json({
                         err: null,
-                        msg: 'LogIn successfull.',
+                        msg: 'LogIn successful.',
                         data: username
                       });
           }
@@ -86,7 +86,7 @@ module.exports =
       req.session.reset();
       return res.status(201).json({
                 err: null,
-                msg: 'LogOut successfull.',
+                msg: 'LogOut successful.',
               });
   }
 };
