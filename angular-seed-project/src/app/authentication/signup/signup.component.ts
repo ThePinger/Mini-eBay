@@ -9,16 +9,16 @@ import { SignupService } from '../../signup.service'
 })
 export class SignupComponent implements OnInit {
 
-  //@Input emailenter : string;
+  values = '';
 
     eMail ='';   
     userName = '';
     passWord = '';
   constructor() { } // injext signUp service
 
-
-
   ngOnInit() {
+
+
   }
 
   signUp(mail : string, name : string, pass : string){
