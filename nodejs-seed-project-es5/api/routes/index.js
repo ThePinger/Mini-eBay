@@ -2,6 +2,7 @@ var express = require('express'),
   router = express.Router(),
   productCtrl = require('../controllers/ProductController'),
   userCtrl = require('../controllers/UserController');
+  cartCtrl = require('../controllers/CartController');
 
 //-------------------------------Product Routes-----------------------------------
 router.get('/product/getProducts', productCtrl.getProducts);
@@ -15,5 +16,10 @@ router.delete('/product/deleteProduct/:productId', productCtrl.deleteProduct);
 router.post('/user/signUp', userCtrl.signUp);
 router.post('/user/logIn', userCtrl.logIn);
 router.get('/user/logOut', userCtrl.logOut);
+
+//---------------------------------Cart Routes------------------------------------
+router.post('/cart/addToCart', cartCtrl.addToCart);
+router.delete('/cart/removeFromCart', cartCtrl.removeFromCart);
+router.get('/cart/viewCart', cartCtrl.viewCart);
 
 module.exports = router;
