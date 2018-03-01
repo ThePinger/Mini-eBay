@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -10,13 +11,12 @@ export class LoginComponent implements OnInit {
 
   loginResponse;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  login(username, password)
+  async login(username, password)
   {
-      this.authService.login(username, password).subscribe(msg => {this.loginResponse = msg});
+      await this.authService.login(username, password).subscribe((response => {this.router.navigate(['/user'])}), (err => {this.loginResponse = "Username or Password not Correct"}));
   }
 }
