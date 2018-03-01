@@ -44,9 +44,48 @@ module.exports =
       }
       res.status(201).json({
         err: null,
-        msg: 'SignUp was successfull.',
+        msg: 'SignUp successfull.',
         data: user
       });
     });
+  },
+
+  logIn: async (req, res, next) =>
+  {
+      var username = req.body.username;
+      var password = req.body.password;
+      var valid    = username && Validations.isString(username) && 
+                     password && Validations.isString(password);
+
+      if(!valid)
+          return res.status(403).json({ error: "Error while logging in" });
+        
+
+      var user =  await User.findOne({ "username": username });
+      if(user)
+      {
+          if(user.isValidPassword())
+          {
+              req.session.user = user.username;
+              return res.status(201).json({
+                        err: null,
+                        msg: 'LogIn successfull.',
+                        data: username
+                      });
+          }
+          else 
+              return res.status(403).json({ error: "Password is Not Correct" });    
+      }
+      else 
+          return res.status(403).json({ error: "Username is Not Correct" });    
+  },
+
+  logOut: async (req, res, next) =>
+  {
+      req.session.reset();
+      return res.status(201).json({
+                err: null,
+                msg: 'LogOut successfull.',
+              });
   }
 };
