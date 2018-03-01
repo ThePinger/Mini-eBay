@@ -6,7 +6,8 @@ import { NbMenuItem } from '@nebular/theme/components/menu/menu.service';
 
 @Component({
   selector: 'app-dashboard',
-  template: `<p>Fucking Dashboard</p>`
+  templateUrl: './dashboard.component.html'
+  
 })
 export class DashboardComponent implements OnInit {
 
