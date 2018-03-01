@@ -64,7 +64,8 @@ module.exports =
       var user =  await User.findOne({ "username": username });
       if(user)
       {
-          if(user.isValidPassword())
+          var validPassword = await user.isValidPassword(password);
+          if(validPassword)
           {
               req.session.user = user.username;
               return res.status(201).json({
