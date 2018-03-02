@@ -42,5 +42,9 @@ export class StoreComponent implements OnInit {
     await this.cartService.addToCart(productname).subscribe(msg => {console.log("YES")}, err => {});
   }
 
+  async deleteProduct(productID)
+  {
+    await this.storeService.deleteProduct(productID).subscribe(msg => {console.log("Removed")}, err => {});
+  }
 
 }
