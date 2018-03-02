@@ -3,7 +3,7 @@
 # Sprint0
 #### About:
 * Purpose:
-This repository was created as a trial to test github and test how it would work in a group project.
+We are trying to create a mini-ebay website where users can login and shop. The mini-ebay consists of a Dashboard, where users can meet the authors and contributors of this project along with there pictures. Users can also display the available products and add whatever product they like to their carts. The products vies have some functionalities where we can add/delete/edit a product.
 * Contributors:
 
     | Member    | ID |
