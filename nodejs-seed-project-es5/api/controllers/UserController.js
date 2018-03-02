@@ -110,5 +110,15 @@ module.exports =
         });
     
     return res.status(403).json({ error: "Not Logged In" });   
+  },
+
+  getAllUsers: async (req, res, next) =>
+  {
+    User.find({}, (err, users) => {
+      if(err) return next(err);
+      res.status(200).json({
+        users: users
+      });
+    });
   }
 };
