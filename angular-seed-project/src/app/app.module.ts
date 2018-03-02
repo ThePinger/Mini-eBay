@@ -13,6 +13,7 @@ import { DefaultComponent } from './default/default.component';
 import { AuthService } from './service/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreService } from './service/store.service';
+import { CartService } from './service/cart.service';
 
 @NgModule({
   declarations: [AppComponent, ParentComponent, DefaultComponent],
@@ -25,6 +26,6 @@ import { StoreService } from './service/store.service';
     HttpClientModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AuthService , StoreService]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AuthService , StoreService, CartService]
 })
 export class AppModule {}

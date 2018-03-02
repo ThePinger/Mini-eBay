@@ -39,10 +39,10 @@
             </thead>
             <tbody>
               <tr *ngFor="let product of products">
-                <td> a </td>
-                <td> a</td>
-                <td> a</td>
-                <td> a</td>
+                <td> {{product._id}}</td>
+                <td> {{product.name}}</td>
+                <td> {{product.price | currency}}</td>
+                <td> {{product.sellername}}</td>
                 
                 
            

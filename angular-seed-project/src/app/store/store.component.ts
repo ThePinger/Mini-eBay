@@ -26,25 +26,12 @@ export class StoreComponent implements OnInit {
   products;
   constructor(private authService: AuthService, private router: Router, private storeService: StoreService, private cartService: CartService) { }
 
-  ngOnInit() 
+  async ngOnInit() 
   {
       this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])});
-      this.storeService.getProducts().subscribe(products => {this.response = products}, err => {});
-      this.getProducts();
+      await this.storeService.getProducts().subscribe(res => {this.products = res.data}, err => {});
   }
-
-  getProducts()
-  {
-    for(let result of this.response){
-       this.products.push({
-          id: result.id, 
-          name: result.name,
-          price: result.price,
-          sellername: result.sellernsame
-       });
-    }
-  }
-
+  
   async createProduct(name, price)
   {
     await this.storeService.createProduct(name, price).subscribe((response => {this.router.navigate(['/user'])}), (err => {this.createresponse = "Can not create product"}));
