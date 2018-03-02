@@ -24,3 +24,10 @@ var productSchema = new Schema({
 });
 
 mongoose.model('Product', productSchema);  
+var Product = mongoose.model('Product');
+
+Product.create({name: 'HamBurger', price:'2000', seller:'Omar Emad'});
+Product.create({name: 'Hotdog', price:'3000', seller:'Omar Emad'});
+Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
+
+//---------------------ADD YOUR PRODUCTS HERE----------------------------

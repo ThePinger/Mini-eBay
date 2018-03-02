@@ -24,6 +24,9 @@ export class StoreComponent implements OnInit {
   updateresponse;
   deleteresponse;
   products;
+
+  onselectedpro ;
+
   constructor(private authService: AuthService, private router: Router, private storeService: StoreService, private cartService: CartService) { }
 
   async ngOnInit() 
@@ -46,5 +49,12 @@ export class StoreComponent implements OnInit {
   {
     await this.storeService.deleteProduct(productID).subscribe(msg => {console.log("Removed")}, err => {});
   }
+  async editProduct(productID,name,price)
+  {
+    await this.storeService.updateProduct(productID,name,price).subscribe(msg => {console.log("Edited")}, err => {});
+  }
+
+
+
 
 }
