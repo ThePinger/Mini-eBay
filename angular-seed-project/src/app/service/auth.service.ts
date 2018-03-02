@@ -9,11 +9,16 @@ export class AuthService {
 
   login(username, password)
   {
-    return this.http.post(environment.apiUrl + 'user/logIn', {username: username, password: password});
+    return this.http.post(environment.apiUrl + 'user/logIn', {username: username, password: password}, {withCredentials: true});
   }
 
   logout()
   {
-    return this.http.get(environment.apiUrl + 'user/logOut');
+    return this.http.get(environment.apiUrl + 'user/logOut', {withCredentials: true});
+  }
+
+  isLoggedIn()
+  {
+    return this.http.get(environment.apiUrl + 'user/loggedIn', {withCredentials: true});
   }
 }
