@@ -23,7 +23,7 @@ var productSchema = new Schema({
   }
 });
 
-mongoose.model('Product', productSchema);  
+mongoose.model('Product', productSchema);
 var Product = mongoose.model('Product');
 //---------------------ADD YOUR PRODUCTS HERE----------------------------
 
@@ -54,3 +54,7 @@ Product.create({name: 'TV', price:'10000', seller:'Yasmina Elsaket'});
 Product.create({name: 'Happy Days - Burger Classic', price:'40', seller:'ShadyTantawy'});
 Product.create({name: 'Super Car - Mega Burger', price:'70', seller:'Shadshad'});
 Product.create({name: 'yalla yabny 5allas', price:'555', seller:'TantawyGroup'});
+
+Product.create({name: 'Gibson 59 Les Paul', price: '12000', seller: 'Mohamed Nawar'});
+Product.create({name: '50 watt tube amp', price: '6000', seller: 'Mohamed Nawar'});
+Product.create({name: 'A strand of McSwags beard hair', price: '375', seller: 'Mohamed Nawar'});
