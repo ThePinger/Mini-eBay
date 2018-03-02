@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import { MENU_ITEMS } from './store-menu';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { Product } from './Product';
 
 // import { Ng2SmartTableModule } from 'ng2-smart-table';
 
@@ -17,19 +18,38 @@ import { StoreService } from '../service/store.service';
 
 export class StoreComponent implements OnInit {
 
+  response;
   createresponse;
   updateresponse;
   deleteresponse;
-
+  products;
   constructor(private authService: AuthService, private router: Router, private storeService: StoreService) { }
 
   ngOnInit() 
   {
       this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])});
+      this.storeService.getProducts().subscribe(products => {this.response = products}, err => {});
+      this.getProducts();
   }
-  //   async createProduct(name, price){
-  //   await this.storeService.createProduct(name, price).subscribe((response => {this.router.navigate(['/user/store/products'])}), (err => {this.createresponse = "Can not create product"}));
-  // }
+
+  getProducts()
+  {
+    for(let result of this.response){
+       this.products.push({
+          id: result.id, 
+          name: result.name,
+          price: result.price,
+          sellername: result.sellernsame
+       });
+    }
+  }
+
+  async createProduct(name, price)
+  {
+    await this.storeService.createProduct(name, price).subscribe((response => {this.router.navigate(['/user'])}), (err => {this.createresponse = "Can not create product"}));
+  }
+
+
   /*async updateProduct(){
     await this.storeService.updateProduct().subscribe((response => {this.router.navigate(['/user/store/products'])}), (err => {this.createresponse = "Can't update product"}));
   }
