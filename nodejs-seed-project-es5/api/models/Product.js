@@ -71,3 +71,12 @@ Product.create({name: 'HP s6000', price:'500', seller:'Farid Khaled'});
 Product.create({name: 'Seagate portable 1 TB', price:'1600', seller:'Farid Khaled'});
 
 
+
+Product.create({name: 'HamBurger', price:'2000', seller:'Omar Emad'});
+Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
+Product.create({name: 'Hotdog', price:'3000', seller:'Omar Emad'});
+
+Product.create({name: 'Swatch', price:'3500', seller:'Amgad Ashraf'});
+Product.create({name: 'HP Laptop', price:'19000', seller:'Amgad Ashraf'});
+
+Product.create({name: 'Samsung TV', price:'17500', seller:'Amgad Ashraf'});
