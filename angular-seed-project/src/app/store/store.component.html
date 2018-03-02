@@ -67,22 +67,17 @@
                 <td> {{product._id}}</td>
                 <td> {{product.name}}</td>
                 <td> {{product.price | currency}}</td>
-                <td> {{product.sellername}}</td>
+                <td> {{product.seller}}</td>
                 
                 
            
-                <td>
-                  <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"> ADD
-                  </i>
-                </button> 
+                <td><button type="button" class="btn btn-danger" (click)="addToCart(product.name)"><i class="glyphicon glyphicon-trash"> ADD
+                  </i></button> 
                   <button type="button" class="btn btn-danger" (click)="editProduct(product._id , Name.value ,Price.value )" ><i class="glyphicon glyphicon-trash"> Edit
                  </i>
                 </button>
-
-                <button type="button" class="btn btn-default" >
-                  <i class="glyphicon glyphicon-pencil">Delete</i>
-              </button> 
-
+                <button type="button" class="btn btn-danger" (click)="deleteProduct(product._id)" ><i class="glyphicon glyphicon-trash">Delete
+                </i></button> 
               </td>
               </tr>
       </tbody>

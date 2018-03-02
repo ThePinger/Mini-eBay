@@ -34,17 +34,21 @@ export class StoreComponent implements OnInit {
       this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])});
       await this.storeService.getProducts().subscribe(res => {this.products = res.data}, err => {});
   }
-  
+
   async createProduct(name, price)
   {
     await this.storeService.createProduct(name, price).subscribe((response => {this.router.navigate(['/user'])}), (err => {this.createresponse = "Can not create product"}));
   }
 
-  async addToCart(productID)
+  async addToCart(productname)
   {
-    await this.cartService.addToCart(productID).subscribe(msg => {}, err => {});
+    await this.cartService.addToCart(productname).subscribe(msg => {console.log("YES")}, err => {});
   }
 
+  async deleteProduct(productID)
+  {
+    await this.storeService.deleteProduct(productID).subscribe(msg => {console.log("Removed")}, err => {});
+  }
   async editProduct(productID,name,price)
   {
     await this.storeService.updateProduct(productID,name,price).subscribe(msg => {console.log("Edited")}, err => {});
