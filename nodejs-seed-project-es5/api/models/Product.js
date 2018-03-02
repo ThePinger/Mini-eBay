@@ -50,3 +50,7 @@ Product.create({name: 'Bag', price:'1500', seller:'Yasmina Elsaket'})
 Product.create({name: 'Sleeve', price:'200', seller:'Yasmina Elsaket'});
 Product.create({name: 'Basket', price:'300', seller:'Yasmina Elsaket'});
 Product.create({name: 'TV', price:'10000', seller:'Yasmina Elsaket'});
+//---------------------ADD YOUR PRODUCTS HERE----------------------------
+Product.create({name: 'Happy Days - Burger Classic', price:'40', seller:'ShadyTantawy'});
+Product.create({name: 'Super Car - Mega Burger', price:'70', seller:'Shadshad'});
+Product.create({name: 'yalla yabny 5allas', price:'555', seller:'TantawyGroup'});
