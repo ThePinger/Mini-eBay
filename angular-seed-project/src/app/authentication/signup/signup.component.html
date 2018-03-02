@@ -1,1 +1,41 @@
 <p>Fucking signup</p>
+
+
+<nb-card _ngcontent-c31="" _nghost-c23="">
+    
+      
+      
+    
+    <nb-card-header _ngcontent-c31="">Sign Up:</nb-card-header>
+    <nb-card-body _ngcontent-c31="">
+        
+      
+        <div _ngcontent-c31="" class="input-group has-person-icon">
+            <input #email (keyup)="0"  _ngcontent-c31=""  class="form-control" placeholder="E-Mail" type="text">
+        </div>
+        <div _ngcontent-c31="" class="input-group">
+            <input #username (keyup)="0" _ngcontent-c31="" class="form-control" placeholder="Username" type="text">
+        </div>
+        
+        <div _ngcontent-c31="" class="input-group">
+          <input #password (keyup)="0" _ngcontent-c31="" class="form-control" placeholder="Password" type="password">
+        </div>
+
+        
+        
+<button type="button"  
+        class="btn btn-hero-success main-btn" 
+        (click)="signUp(email.value, username.value,password.value)" >Sign Up
+</button>
+
+    <!-- <div *ngIf="user">
+        <p> {{user.email}} </p>
+        <p> {{user.password}} </p>
+        <p> {{user.username}} </p>
+    </div> -->
+
+    <div *ngIf="signupResponse">
+        <p>{{signupResponse}}</p>
+    </div>
+
+    
