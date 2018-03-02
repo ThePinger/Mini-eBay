@@ -17,9 +17,9 @@ export class CartService {
      return this.http.post(environment.apiUrl + '/cart/removeFromCart', {product_id: productID}, {withCredentials: true});
   }
 
-  addToCart(productID)
+  addToCart(productname)
   {
-     return this.http.post(environment.apiUrl + '/cart/addToCart', {product_id: productID}, {withCredentials: true});      
+     return this.http.post(environment.apiUrl + 'cart/addToCart', {product: productname}, {withCredentials: true});      
   }
 
   viewCart()
