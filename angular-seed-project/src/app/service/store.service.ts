@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { StoreComponent } from '../store/store.component'
+
+
+@Injectable()
+
 export class StoreService{
+
+
     constructor(private http: HttpClient) { }
     getProducts(){
         return this.http.get(environment.apiUrl + '/product/getProducts/',  {withCredentials: true});
@@ -24,4 +31,3 @@ export class StoreService{
         return this.http.patch(environment.apiUrl + '/product/updateProduct/' + productId,{name: name, price: price} ,{withCredentials:true} );
     }
 }
-{}

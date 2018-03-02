@@ -13,7 +13,7 @@ import { StoreService } from '../service/store.service';
   selector: 'app-store',
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss'],
- template: '<ng2-smart-table [Myprodcuts]="Myproducts"></ng2-smart-table>'
+ //template: '<ng2-smart-table [Myprodcuts]="Myproducts"></ng2-smart-table>'
 })
 
 export class StoreComponent implements OnInit {
