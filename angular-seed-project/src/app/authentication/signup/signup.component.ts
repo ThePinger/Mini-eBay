@@ -1,13 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-import { SignupService } from '../../signup.service'
-
-import { User } from "./User";
-
 import { HttpErrorResponse } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http'
-
-
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../service/auth.service';
 import { Router } from "@angular/router";
 
 @Component({
@@ -27,7 +21,7 @@ export class SignupComponent implements OnInit {
   it ; 
   emsg; 
 
-  constructor(private signupService : SignupService , private route : Router , private http :HttpClient ) { } 
+  constructor(private authService : AuthService , private route : Router , private http :HttpClient ) { } 
 
   ngOnInit() {}
 
@@ -42,9 +36,9 @@ export class SignupComponent implements OnInit {
       this.username =name;
       this.password = pass;
 
-      await this.signupService.SignUpResponse(this.username,this.email ,this.password)
+      await this.authService.signUp(this.username,this.email ,this.password)
       .subscribe(
-      (response => {this.route.navigate(['/auth'])}),
+      (response => {this.route.navigate(['/auth/login'])}),
       (res => {this.signupResponse = "SignUP failed try again"}));
 
 
