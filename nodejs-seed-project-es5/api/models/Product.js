@@ -63,3 +63,11 @@ Product.create({name: 'Woody', price:'12000', seller:'Amr Elshehaly'});
 Product.create({name: 'Lenovo Laptop', price:'11000', seller:'Shady Sherif'});
 Product.create({name: 'Casio Calculator', price:'200', seller:'Shady Sherif'});
 Product.create({name: 'Leather Jacket', price:'2500', seller:'Shady Sherif'});
+
+
+Product.create({name: 'iPhone X', price:'28000', seller:'Farid Khaled'});
+Product.create({name: 'Macbook Pro', price:'60000', seller:'Farid Khaled'});
+Product.create({name: 'HP s6000', price:'500', seller:'Farid Khaled'});
+Product.create({name: 'Seagate portable 1 TB', price:'1600', seller:'Farid Khaled'});
+
+
