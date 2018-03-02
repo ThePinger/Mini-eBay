@@ -16,10 +16,12 @@ router.delete('/product/deleteProduct/:productId', productCtrl.deleteProduct);
 router.post('/user/signUp', userCtrl.signUp);
 router.post('/user/logIn', userCtrl.logIn);
 router.get('/user/logOut', userCtrl.logOut);
+router.get('/user/loggedIn', userCtrl.isLoggedIn);
+router.get('/users', userCtrl.getAllUsers);
 
 //---------------------------------Cart Routes------------------------------------
 router.post('/cart/addToCart', cartCtrl.addToCart);
-router.delete('/cart/removeFromCart', cartCtrl.removeFromCart);
+router.post('/cart/removeFromCart', cartCtrl.removeFromCart);
 router.get('/cart/viewCart', cartCtrl.viewCart);
 
 module.exports = router;
