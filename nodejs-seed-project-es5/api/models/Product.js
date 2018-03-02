@@ -95,3 +95,7 @@ Product.create({name: 'Bag', price:'1500', seller:'Yasmina Elsaket'})
 Product.create({name: 'Sleeve', price:'200', seller:'Yasmina Elsaket'});
 Product.create({name: 'Basket', price:'300', seller:'Yasmina Elsaket'});
 Product.create({name: 'TV', price:'10000', seller:'Yasmina Elsaket'});
+
+Product.create({name: 'My poor soul', price:'1', seller:'Ahmed Hatem'});
+Product.create({name: 'One Coin', price:'1', seller:'Ahmed Hatem'});
+Product.create({name: '193 Lockpicks', price:'193', seller:'Ahmed Hatem'});
