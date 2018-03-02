@@ -6,7 +6,8 @@ import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-dashboard',
-  template: `<p>Fucking Dashboard</p>`
+  templateUrl: './dashboard.component.html'
+  
 })
 export class DashboardComponent implements OnInit {
 
