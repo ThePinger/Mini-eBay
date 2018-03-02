@@ -6,17 +6,16 @@
     
     <nb-card-header _ngcontent-c12="">Login</nb-card-header>
     <nb-card-body _ngcontent-c12="">
-        <form _ngcontent-c12="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="">
           <div _ngcontent-c12="" class="form-group row">
-            <label _ngcontent-c12="" class="col-sm-3 form-control-label" for="inputEmail3">Email</label>
+            <label _ngcontent-c12="" class="col-sm-3 form-control-label" for="inputEmail3">Username</label>
             <div _ngcontent-c12="" class="col-sm-9">
-              <input _ngcontent-c12="" class="form-control" id="inputEmail3" placeholder="Email" type="email">
+              <input #username (keyup)="0" _ngcontent-c12="" class="form-control" id="inputEmail3" placeholder="Username" type="email">
             </div>
           </div>
           <div _ngcontent-c12="" class="form-group row">
             <label _ngcontent-c12="" class="col-sm-3 form-control-label" for="inputPassword3">Password</label>
             <div _ngcontent-c12="" class="col-sm-9">
-              <input _ngcontent-c12="" class="form-control" id="inputPassword3" placeholder="Password" type="password">
+              <input #password (keyup)="0" _ngcontent-c12="" class="form-control" id="inputPassword3" placeholder="Password" type="password">
             </div>
           </div>
           <div _ngcontent-c12="" class="form-group row">
@@ -36,11 +35,11 @@
           </div>
           <div _ngcontent-c12="" class="form-group row">
             <div _ngcontent-c12="" class="offset-sm-3 col-sm-9">
-              <button _ngcontent-c12="" class="btn btn-warning" type="submit" click="login(inputEmail3,inputPassword3)" >Sign in</button>
+              <button _ngcontent-c12="" class="btn btn-warning" type="submit" (click)="login(username.value,password.value)" >Sign in</button>
             </div>
           </div>
-        </form>
       </nb-card-body>
     
   </nb-card>
   </div>
+
