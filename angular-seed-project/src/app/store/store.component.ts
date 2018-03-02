@@ -12,7 +12,7 @@ import { StoreService } from '../service/store.service';
   selector: 'app-store',
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss'],
- template: '<ng2-smart-table [Myprodcuts]="Myproducts"></ng2-smart-table>'
+ //template: '<ng2-smart-table [Myprodcuts]="Myproducts"></ng2-smart-table>'
 })
 
 export class StoreComponent implements OnInit {
@@ -20,15 +20,16 @@ export class StoreComponent implements OnInit {
   createresponse;
   updateresponse;
   deleteresponse;
+
   constructor(private authService: AuthService, private router: Router, private storeService: StoreService) { }
 
   ngOnInit() 
   {
       this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])});
   }
-    async createProduct(name, price){
-    await this.storeService.createProduct(name, price).subscribe((response => {this.router.navigate(['/user/store/products'])}), (err => {this.createresponse = "Can not create product"}));
-  }
+  //   async createProduct(name, price){
+  //   await this.storeService.createProduct(name, price).subscribe((response => {this.router.navigate(['/user/store/products'])}), (err => {this.createresponse = "Can not create product"}));
+  // }
   /*async updateProduct(){
     await this.storeService.updateProduct().subscribe((response => {this.router.navigate(['/user/store/products'])}), (err => {this.createresponse = "Can't update product"}));
   }
