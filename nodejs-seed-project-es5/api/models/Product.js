@@ -35,4 +35,5 @@ Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
 
 Product.create({name: 'SheeshTawook', price:'2014', seller:'Abdellatiif'});
 Product.create({name: 'Shawerma', price:'1084', seller:'Abdellatiif'});
-Product.create({name: 'Hamada', price:'1065', seller:'Abdellatiif'});
+Product.create({name: 'Apple Pie', price:'1065', seller:'Abdellatiif'});
+Product.create({name: 'WaterMelon', price:'1065', seller:'Abdellatiif'});
