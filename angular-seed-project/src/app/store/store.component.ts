@@ -43,15 +43,18 @@ export class StoreComponent implements OnInit {
   async addToCart(productname)
   {
     await this.cartService.addToCart(productname).subscribe(msg => {console.log("YES")}, err => {});
+    this.ngOnInit();
   }
 
   async deleteProduct(productID)
   {
     await this.storeService.deleteProduct(productID).subscribe(msg => {console.log("Removed")}, err => {});
+    this.ngOnInit();
   }
   async editProduct(productID,name,price)
   {
     await this.storeService.updateProduct(productID,name,price).subscribe(msg => {console.log("Edited")}, err => {});
+    this.ngOnInit();
   }
 
 
