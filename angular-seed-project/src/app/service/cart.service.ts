@@ -12,14 +12,14 @@ export class CartService {
      return this.http.get(environment.apiUrl + '/cart/checkout', {withCredentials: true});
   }
 
-  removeFromCart(productID)
+  removeFromCart(productname)
   {
-     return this.http.post(environment.apiUrl + '/cart/removeFromCart', {product_id: productID}, {withCredentials: true});
+     return this.http.post(environment.apiUrl + '/cart/removeFromCart', {product: productname}, {withCredentials: true});
   }
 
   addToCart(productname)
   {
-     return this.http.post(environment.apiUrl + 'cart/addToCart', {product: productname}, {withCredentials: true});      
+     return this.http.post(environment.apiUrl + '/cart/addToCart', {product: productname}, {withCredentials: true});      
   }
 
   viewCart()
