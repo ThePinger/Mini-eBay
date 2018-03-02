@@ -8,6 +8,7 @@ import { Product } from './Product';
 
 import { NbMenuItem } from '@nebular/theme/components/menu/menu.service';
 import { StoreService } from '../service/store.service';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-store',
@@ -23,7 +24,7 @@ export class StoreComponent implements OnInit {
   updateresponse;
   deleteresponse;
   products;
-  constructor(private authService: AuthService, private router: Router, private storeService: StoreService) { }
+  constructor(private authService: AuthService, private router: Router, private storeService: StoreService, private cartService: CartService) { }
 
   ngOnInit() 
   {
@@ -49,14 +50,10 @@ export class StoreComponent implements OnInit {
     await this.storeService.createProduct(name, price).subscribe((response => {this.router.navigate(['/user'])}), (err => {this.createresponse = "Can not create product"}));
   }
 
-
-  /*async updateProduct(){
-    await this.storeService.updateProduct().subscribe((response => {this.router.navigate(['/user/store/products'])}), (err => {this.createresponse = "Can't update product"}));
+  async addToCart(productID)
+  {
+    await this.cartService.addToCart(productID).subscribe(msg => {}, err => {});
   }
-  async deleteProduct(){
-    await this.storeService.deleteProduct().subscribe((response => {this.router.navigate(['/user/store/products'])}), (err => {this.deleteresponse = "Can't delete product"}));
-  }*/
- 
 
 
 }
