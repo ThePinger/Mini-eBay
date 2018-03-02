@@ -68,6 +68,7 @@ module.exports =
           if(validPassword)
           {
               req.session.user = user.username;
+              console.log(req.session.user);
               return res.status(201).json({
                         err: null,
                         msg: 'LogIn successful.',
@@ -88,5 +89,17 @@ module.exports =
                 err: null,
                 msg: 'LogOut successful.',
               });
+  },
+
+  isLoggedIn : async (req, res, next) =>
+  {
+    console.log(req.session.user);
+    if(req.session.user)
+        return res.status(201).json({
+          err: null,
+          msg: 'Logged In.',
+        });
+    
+    return res.status(403).json({ error: "Not Logged In" });   
   }
 };
