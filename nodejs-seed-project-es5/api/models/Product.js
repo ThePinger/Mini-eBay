@@ -25,6 +25,7 @@ var productSchema = new Schema({
 
 mongoose.model('Product', productSchema);
 var Product = mongoose.model('Product');
+//---------------------ADD YOUR PRODUCTS HERE----------------------------
 
 Product.create({name: 'HamBurger', price:'2000', seller:'Omar Emad'});
 Product.create({name: 'Hotdog', price:'3000', seller:'Omar Emad'});
@@ -35,6 +36,9 @@ Product.create({name: 'Laptop', price:'11000', seller:'Nader Waguih'});
 Product.create({name: 'Computer', price:'12000', seller:'Nader Waguih'});
 
 //---------------------ADD YOUR PRODUCTS HERE----------------------------
+Product.create({name: 'Macbook', price:'20000', seller:'Yasmine Osama'});
+Product.create({name: 'Alienware', price:'50000', seller:'Yasmine Osama'});
+Product.create({name: 'HP-Omen15', price:'30000', seller:'Yasmine Osama'});
 
 
 Product.create({name: 'Lion King', price:'200', seller:'Ramy Ahmed'});
@@ -80,3 +84,14 @@ Product.create({name: 'Swatch', price:'3500', seller:'Amgad Ashraf'});
 Product.create({name: 'HP Laptop', price:'19000', seller:'Amgad Ashraf'});
 
 Product.create({name: 'Samsung TV', price:'17500', seller:'Amgad Ashraf'});
+
+
+Product.create({name: 'Laptop', price:'9000', seller:'Yasmina Elsaket'});
+Product.create({name: 'Pandora', price:'7000', seller:'Yasmina Elsaket'});
+Product.create({name: 'Jacket', price:'1000', seller:'Yasmina Elsaket'});
+Product.create({name: 'New Balance', price:'2000', seller:'Yasmina Elsaket'});
+Product.create({name: 'Kitkat', price:'10', seller:'Yasmina Elsaket'});
+Product.create({name: 'Bag', price:'1500', seller:'Yasmina Elsaket'})
+Product.create({name: 'Sleeve', price:'200', seller:'Yasmina Elsaket'});
+Product.create({name: 'Basket', price:'300', seller:'Yasmina Elsaket'});
+Product.create({name: 'TV', price:'10000', seller:'Yasmina Elsaket'});
