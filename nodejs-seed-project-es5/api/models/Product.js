@@ -36,3 +36,7 @@ Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
 Product.create({name: 'Lion King', price:'200', seller:'Ramy Ahmed'});
 Product.create({name: 'Golden Spoon', price:'1500', seller:'Ramy Ahmed'});
 Product.create({name: 'Cow', price:'400000', seller:'Ramy Ahmed'});
+
+Product.create({name: 'Football Jersey', price:'500', seller:'Youssam Joseph'});
+Product.create({name: 'Official Match Ball', price:'600', seller:'Youssam Joseph'});
+Product.create({name: 'Football boots', price:'300', seller:'Youssam Joseph'});
