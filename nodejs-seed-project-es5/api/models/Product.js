@@ -40,3 +40,7 @@ Product.create({name: 'Cow', price:'400000', seller:'Ramy Ahmed'});
 Product.create({name: 'Football Jersey', price:'500', seller:'Youssam Joseph'});
 Product.create({name: 'Official Match Ball', price:'600', seller:'Youssam Joseph'});
 Product.create({name: 'Football boots', price:'300', seller:'Youssam Joseph'});
+
+Product.create({name: 'MacBook Pro', price:'27000', seller:'David Mina'});
+Product.create({name: 'iPhone 8 Plus', price:'16000', seller:'David Mina'});
+Product.create({name: 'Power Bank', price:'650', seller:'David Mina'});
