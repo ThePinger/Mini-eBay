@@ -23,5 +23,6 @@ router.get('/users', userCtrl.getAllUsers);
 router.post('/cart/addToCart', cartCtrl.addToCart);
 router.post('/cart/removeFromCart', cartCtrl.removeFromCart);
 router.get('/cart/viewCart', cartCtrl.viewCart);
+router.post('/cart/checkout', cartCtrl.checkout);
 
 module.exports = router;
