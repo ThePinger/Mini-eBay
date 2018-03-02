@@ -1,10 +1,12 @@
 ![Tutorial Logo](https://github.com/ThePinger/T09Sprint0/blob/master/Tutorial%20logo.png)
 
-# Sprint0
+# Mini-ebay
 #### About:
-* Purpose:
-We are trying to create a mini-ebay website where users can login and shop. The mini-ebay consists of a Dashboard, where users can meet the authors and contributors of this project along with there pictures. Users can also display the available products and add whatever product they like to their carts. The products vies have some functionalities where we can add/delete/edit a product.
-* Contributors:
+* Getting started:
+This repo consists of two files, one for the front end and one for the back end. 
+*angular-seed-project
+*nodejs-seed-project-es5
+* Authors:
 
     | Member    | ID |
     |----------|:-------------:|
@@ -31,3 +33,6 @@ We are trying to create a mini-ebay website where users can login and shop. The 
     | Nadeen Ahmad |  37-4023| 
     | Ahmed Hossam |  34-3465| 
     
+
+* About:
+We are trying to create a mini-ebay website where users can login and shop. The mini-ebay consists of a Dashboard, where users can meet the authors and contributors of this project along with there pictures. Users can also display the available products and add whatever product they like to their carts. The products vies have some functionalities where we can add/delete/edit a product.
