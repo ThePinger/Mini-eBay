@@ -1,29 +1,21 @@
-
-<!-- <script type="text/javascript" src="/Users/yasminaelsaket/Documents/Mini-eBay/nodejs-seed-project-es5/api/models/Product.js"></script> -->
-<!-- <div id="products"></div> -->
-
-<table st-table="rowCollection" class="table table-striped"> 
-    <thead> 
-    <tr> 
-      <th>ID</th> 
-      <th>Name</th> 
-      <th>Price</th> 
-      <th>Created at</th> 
-          <th>Updated at</th> 
-          <th>Seller Name</th> 
-          <!-- <th>Actions</th> -->
-    </tr> 
-    </thead> 
-    <!-- <tbody> 
-    <tr ng-repeat="row in rowCollection"> 
-      <td>{{row.id}}</td> 
-      <td>{{row.name}}</td> 
-      <td>{{row.price}}</td> 
-      <td>{{row.createdat}}</td> 
-      <td>{{row.updatedat}}</td> 
-      <td>{{row.sellername}}</td>  -->
-      <!--<td><button [nbContextMenu]="items"></button></td> -->
-    
-    <!-- </tr> 
-    </tbody>  -->
-  </table> 
+<div class="row">
+  <div class="col-md-6">
+    <nb-card>
+      <nb-card-header>
+        Search
+      </nb-card-header>
+      <nb-card-body>
+        <nb-search type="rotate-layout" tag="rotate-layout"></nb-search>
+      </nb-card-body>
+    </nb-card>
+  </div>
+<nb-card>
+    <nb-card-header>
+      Products
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
