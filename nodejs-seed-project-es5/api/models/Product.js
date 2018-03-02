@@ -109,3 +109,11 @@ Product.create({name: 'Pizza',price:'250',seller:'Malak Hatem'});
 Product.create({name: 'Alienware', price:'30,000', seller:'Ahmed Ashraf'});
 Product.create({name: 'Lenovo Y50', price:'15,500', seller:'Ahmed Ashraf'});
 Product.create({name: 'LG Smart TV', price:'16,000', seller:'Ahmed Ashraf'});
+//---------------------ADD YOUR PRODUCTS HERE----------------------------
+Product.create({name: 'Happy Days - Burger Classic', price:'40', seller:'ShadyTantawy'});
+Product.create({name: 'Super Car - Mega Burger', price:'70', seller:'Shadshad'});
+Product.create({name: 'yalla yabny 5allas', price:'555', seller:'TantawyGroup'});
+
+Product.create({name: 'Gibson 59 Les Paul', price: '12000', seller: 'Mohamed Nawar'});
+Product.create({name: '50 watt tube amp', price: '6000', seller: 'Mohamed Nawar'});
+Product.create({name: 'A strand of McSwags beard hair', price: '375', seller: 'Mohamed Nawar'});
