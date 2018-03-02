@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { AuthService } from '../../../service/auth.service';
 
 @Component({
   selector: 'ngx-header',
@@ -13,7 +15,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private sidebarService: NbSidebarService,
-    private menuService: NbMenuService
+    private menuService: NbMenuService,
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -29,9 +33,12 @@ export class HeaderComponent implements OnInit {
     this.menuService.navigateHome();
   }
 
-  onMenuClick(event) {
-    if (event.title === 'Logout') {
-      // Think about what to do ;)
+  async onMenuClick(event) 
+  {
+    if (event.title === 'Logout') 
+    {
+      await this.authService.logout().subscribe();
+      this.router.navigate(['']);
     }
   }
 }

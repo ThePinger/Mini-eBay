@@ -10,6 +10,7 @@ module.exports =
     var userName     = req.body.username;
     var userEmail    = req.body.email;
     var userPassword = req.body.password;
+    //var error        = false;
     var valid =
       userName &&
       Validations.isString(userName) &&
@@ -29,13 +30,21 @@ module.exports =
     const usernameAlreadyExists =  await User.findOne({ "username": userName });
       if(usernameAlreadyExists)
       {
-        return res.status(403).json({ error: "Username already exists!" });
+        return res.status(422).json({
+          err: null,
+          msg: 'Username already exists',
+          data: null
+        });
       }
       
     const emailAlreadyExists =  await User.findOne({ "email": userEmail });
       if(emailAlreadyExists)
       {
-        return res.status(403).json({ error: "Email already exists!" });
+        return res.status(422).json({
+          err: null,
+          msg: 'Email already exists.',
+          data: null
+        });
       }
 
     User.create(req.body, function(err, user) {
@@ -44,7 +53,7 @@ module.exports =
       }
       res.status(201).json({
         err: null,
-        msg: 'SignUp successfull.',
+        msg: 'SignUp successful.',
         data: user
       });
     });
@@ -68,9 +77,10 @@ module.exports =
           if(validPassword)
           {
               req.session.user = user.username;
+              console.log(req.session.user);
               return res.status(201).json({
                         err: null,
-                        msg: 'LogIn successfull.',
+                        msg: 'LogIn successful.',
                         data: username
                       });
           }
@@ -86,7 +96,7 @@ module.exports =
       req.session.reset();
       return res.status(201).json({
                 err: null,
-                msg: 'LogOut successfull.',
+                msg: 'LogOut successful.',
               });
   },
 
