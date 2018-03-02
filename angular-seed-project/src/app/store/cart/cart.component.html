@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-xxxl-8">
       <div class="row">
         <div class="col-md-6" >
@@ -10,9 +10,56 @@
                 </nb-card-body>
                 </nb-card>
               </div>
-  
+   -->
+
+<nb-card _ngcontent-c31="" _nghost-c23="">
     
-    <nb-card [size]="'xxlarge'" class="col-md-4">
+          <div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Seller Name</th>
+                    <th>Actions</th>
+                   
+                  </tr>
+                  <tr>
+                    <!-- <th colspan="5"> -->
+                    <!-- <input st-search placeholder="Search for a product" class="input-sm form-control" id ="pro"type="search" / > -->
+                    <!-- </th> -->
+                    </tr>
+                </thead>
+                <tbody>
+          
+    
+                  <tr *ngFor="let product of products">
+                    <td> {{product._id}}</td>
+                    <td> {{product.name}}</td>
+                    <td> {{product.price | currency}}</td>
+                    <td> {{product.seller}}</td>
+                    
+                    
+               
+                    <td><button type="button" class="btn btn-danger" (click)="removeFromCart(product.name)"><i class="glyphicon glyphicon-trash"> Remove
+                      </i></button> 
+                      <button type="button" class="btn btn-danger" (click)="editProduct(product._id , Name.value ,Price.value )" ><i class="glyphicon glyphicon-trash"> Edit
+                     </i>
+                    </button>
+                    <!-- <button type="button" class="btn btn-danger" (click)="deleteProduct(product._id)" ><i class="glyphicon glyphicon-trash">Delete
+                    </i></button>  -->
+                  </td>
+                  </tr>
+          </tbody>
+        </table>
+      </div>
+      
+           
+      </nb-card>
+
+    
+    <!-- <nb-card [size]="'xxlarge'" class="col-md-4">
       <nb-card-header>Total: xxx EGP</nb-card-header>
       <nb-card-body>
         <div class="shape-container">
@@ -24,4 +71,4 @@
           <div>
             <button class="btn btn-success btn-rectangle btn-demo" (click)="checkout()">Proceed To Checkout</button>
           </div>
-        </div>
+        </div> -->
