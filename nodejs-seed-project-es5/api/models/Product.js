@@ -36,6 +36,10 @@ Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
 Product.create({name: 'Lion King', price:'200', seller:'Ramy Ahmed'});
 Product.create({name: 'Golden Spoon', price:'1500', seller:'Ramy Ahmed'});
 Product.create({name: 'Cow', price:'400000', seller:'Ramy Ahmed'});
+Product.create({name: 'SheeshTawook', price:'2014', seller:'Abdellatiif'});
+Product.create({name: 'Shawerma', price:'1084', seller:'Abdellatiif'});
+Product.create({name: 'Apple Pie', price:'1065', seller:'Abdellatiif'});
+Product.create({name: 'WaterMelon', price:'1065', seller:'Abdellatiif'});
 
 Product.create({name: 'Football Jersey', price:'500', seller:'Youssam Joseph'});
 Product.create({name: 'Official Match Ball', price:'600', seller:'Youssam Joseph'});
