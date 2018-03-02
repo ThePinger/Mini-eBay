@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; 
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -11,9 +11,14 @@ export class CartComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() 
+  ngOnInit()
   {
-    this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])});
+    this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])}); 
+  }
+
+  checkout()
+  {
+
   }
 
 }
