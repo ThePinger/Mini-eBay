@@ -31,3 +31,6 @@ Product.create({name: 'Hotdog', price:'3000', seller:'Omar Emad'});
 Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
 
 //---------------------ADD YOUR PRODUCTS HERE----------------------------
+Product.create({name: 'Football Jersey', price:'500', seller:'Youssam Joseph'});
+Product.create({name: 'Official Match Ball', price:'600', seller:'Youssam Joseph'});
+Product.create({name: 'Football boots', price:'300', seller:'Youssam Joseph'});
