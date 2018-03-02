@@ -21,3 +21,6 @@ var productSchema = new Schema({
 });
 
 mongoose.model('Product', productSchema);  
+Product.create({name: 'Converse',price:'1500',seller:'Malak Hatem'});
+Product.create({name: 'Vans',price:'900',seller:'Malak Hatem'});
+Product.create({name: 'Pizza',price:'250',seller:'Malak Hatem'});
