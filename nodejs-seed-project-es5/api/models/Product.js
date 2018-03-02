@@ -31,3 +31,7 @@ Product.create({name: 'Hotdog', price:'3000', seller:'Omar Emad'});
 Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
 
 //---------------------ADD YOUR PRODUCTS HERE----------------------------
+
+Product.create({name: 'MacBook Pro', price:'27000', seller:'David Mina'});
+Product.create({name: 'iPhone 8 Plus', price:'16000', seller:'David Mina'});
+Product.create({name: 'Power Bank', price:'650', seller:'David Mina'});
