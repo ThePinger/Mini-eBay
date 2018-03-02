@@ -10,13 +10,13 @@ export class StoreService{
         return this.http.post(environment.apiUrl + '/product/createProduct', {name: name, price: price}, {withCredentials: true});
   
     }
-    deleteProduct(){
+    /*deleteProduct(){
         return this.http.delete(environment.apiUrl + '/product/deleteProduct/:productId', {withCredentials: true} );
     }
 
     updateProduct(){
         return this.http.patch(environment.apiUrl + '/product/updateProduct/:productId',{withCredentials:true} );
-    }
+    }*/
 
 }
 {}
