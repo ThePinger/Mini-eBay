@@ -88,5 +88,27 @@ module.exports =
                 err: null,
                 msg: 'LogOut successfull.',
               });
+  },
+
+  isLoggedIn : async (req, res, next) =>
+  {
+    console.log(req.session.user);
+    if(req.session.user)
+        return res.status(201).json({
+          err: null,
+          msg: 'Logged In.',
+        });
+    
+    return res.status(403).json({ error: "Not Logged In" });   
+  },
+
+  getAllUsers: async (req, res, next) =>
+  {
+    User.find({}, (err, users) => {
+      if(err) return next(err);
+      res.status(200).json({
+        users: users
+      });
+    });
   }
 };
