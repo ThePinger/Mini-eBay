@@ -14,7 +14,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Cart',
-    icon: '',
+    icon: 'fa fa-shopping-basket',
     link: '/user/store/cart'
   }
 ];

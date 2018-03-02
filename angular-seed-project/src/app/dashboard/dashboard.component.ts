@@ -15,6 +15,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() 
   {
-      this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])});
+     // this.authService.isLoggedIn().subscribe(msg => {}, err => {this.router.navigate([''])});
   }
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { StoreComponent } from './store.component';
 import { CartComponent } from './cart/cart.component';
 
@@ -23,6 +23,10 @@ const routes: Routes = [
   }
   
 ];
+const config: ExtraOptions = {
+  useHash: true,
+  onSameUrlNavigation: 'reload'
+};
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

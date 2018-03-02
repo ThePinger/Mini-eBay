@@ -31,3 +31,7 @@ Product.create({name: 'Hotdog', price:'3000', seller:'Omar Emad'});
 Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
 
 //---------------------ADD YOUR PRODUCTS HERE----------------------------
+
+Product.create({name: 'Lion King', price:'200', seller:'Ramy Ahmed'});
+Product.create({name: 'Golden Spoon', price:'1500', seller:'Ramy Ahmed'});
+Product.create({name: 'Private Jet', price:'400000', seller:'Ramy Ahmed'});

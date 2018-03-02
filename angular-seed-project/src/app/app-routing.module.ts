@@ -3,6 +3,8 @@ import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './authentication/login/login.component';
 import { ParentComponent } from './parent/parent.component';
 import { DefaultComponent } from './default/default.component';
+import { CartComponent } from './store/cart/cart.component';
+import { StoreModule } from './store/store.module';
 
 const routes: Routes = [
   {

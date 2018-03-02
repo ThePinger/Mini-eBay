@@ -3,6 +3,9 @@
   "project": {
     "name": "angular-seed-project"
   },
+  "styles": [
+        "../node_modules/@nebular/theme/styles/prebuilt/cosmic.css"
+      ],
   "apps": [
     {
       "root": "src",

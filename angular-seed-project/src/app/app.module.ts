@@ -15,8 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreService } from './service/store.service';
 import { CartService } from './service/cart.service';
 
+
+
 @NgModule({
-  declarations: [AppComponent, ParentComponent, DefaultComponent],
+  declarations: [AppComponent, ParentComponent, DefaultComponent, CartComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
