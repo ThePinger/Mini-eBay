@@ -33,7 +33,7 @@ Product.create({name: 'PlayStation', price:'4000', seller:'Omar Emad'});
 //---------------------ADD YOUR PRODUCTS HERE----------------------------
 
 Product.create({name: 'iPhone X', price:'28000', seller:'Farid Khaled'});
-Product.create({name: 'Macbooc Pro', price:'60000', seller:'Farid Khaled'});
+Product.create({name: 'Macbook Pro', price:'60000', seller:'Farid Khaled'});
 Product.create({name: 'HP s6000', price:'500', seller:'Farid Khaled'});
 Product.create({name: 'Seagate portable 1 TB', price:'1600', seller:'Farid Khaled'});
 
