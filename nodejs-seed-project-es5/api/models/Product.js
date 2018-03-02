@@ -54,3 +54,8 @@ Product.create({name: 'Mrs.potato Head', price:'1', seller:'Mr.potato Head'});
 Product.create({name: 'Woody', price:'12000', seller:'Amr Elshehaly'});
 
 
+
+
+Product.create({name: 'Lenovo Laptop', price:'11000', seller:'Shady Sherif'});
+Product.create({name: 'Casio Calculator', price:'200', seller:'Shady Sherif'});
+Product.create({name: 'Leather Jacket', price:'2500', seller:'Shady Sherif'});
