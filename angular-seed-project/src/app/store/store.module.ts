@@ -14,4 +14,4 @@ import { CartComponent } from './cart/cart.component';
   ],
   declarations: [StoreComponent, CartComponent]
 })
-export class StoreModule { }
+export class StoreModule { };
