@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-//import { MENU_ITEMS } from './store-menu';
-import { Router } from '@angular/router';
-import { AuthService } from '../service/auth.service';
-import { Product } from './Product';
 
+
+import { Router } from '@angular/router';
 // import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NbMenuItem } from '@nebular/theme/components/menu/menu.service';
 import { StoreService } from '../service/store.service';
