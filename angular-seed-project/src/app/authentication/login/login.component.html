@@ -1,1 +1,45 @@
-<p>Fucking Login</p>
+<div _ngcontent-c12="" class="col-md-6">
+    <nb-card _ngcontent-c12="" _nghost-c13="">
+    
+      
+      
+    
+    <nb-card-header _ngcontent-c12="">Login</nb-card-header>
+    <nb-card-body _ngcontent-c12="">
+          <div _ngcontent-c12="" class="form-group row">
+            <label _ngcontent-c12="" class="col-sm-3 form-control-label" for="inputEmail3">Username</label>
+            <div _ngcontent-c12="" class="col-sm-9">
+              <input #username (keyup)="0" _ngcontent-c12="" class="form-control" id="inputEmail3" placeholder="Username" type="email">
+            </div>
+          </div>
+          <div _ngcontent-c12="" class="form-group row">
+            <label _ngcontent-c12="" class="col-sm-3 form-control-label" for="inputPassword3">Password</label>
+            <div _ngcontent-c12="" class="col-sm-9">
+              <input #password (keyup)="0" _ngcontent-c12="" class="form-control" id="inputPassword3" placeholder="Password" type="password">
+            </div>
+          </div>
+          <div _ngcontent-c12="" class="form-group row">
+            <div _ngcontent-c12="" class="offset-sm-3 col-sm-9">
+              <div _ngcontent-c12="" class="checkbox">
+                <nb-checkbox _ngcontent-c12="">
+    <label class="customised-control customised-checkbox">
+      <input class="customised-control-input" type="checkbox">
+      <span class="customised-control-indicator"></span>
+      <span class="customised-control-description">
+        Remember me
+      </span>
+    </label>
+  </nb-checkbox>
+              </div>
+            </div>
+          </div>
+          <div _ngcontent-c12="" class="form-group row">
+            <div _ngcontent-c12="" class="offset-sm-3 col-sm-9">
+              <button _ngcontent-c12="" class="btn btn-warning" type="submit" (click)="login(username.value,password.value)" >Sign in</button>
+            </div>
+          </div>
+      </nb-card-body>
+    
+  </nb-card>
+  </div>
+

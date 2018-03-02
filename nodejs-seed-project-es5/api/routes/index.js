@@ -16,6 +16,7 @@ router.delete('/product/deleteProduct/:productId', productCtrl.deleteProduct);
 router.post('/user/signUp', userCtrl.signUp);
 router.post('/user/logIn', userCtrl.logIn);
 router.get('/user/logOut', userCtrl.logOut);
+router.get('/user/loggedIn', userCtrl.isLoggedIn);
 
 //---------------------------------Cart Routes------------------------------------
 router.post('/cart/addToCart', cartCtrl.addToCart);
