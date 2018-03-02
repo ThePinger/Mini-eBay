@@ -120,6 +120,7 @@ module.exports =
     viewCart: async (req, res, next) =>
     {
       var userName = req.session.user;
+
       User.findOne({ username: userName }, (err, user) => {
         if(err) {
           console.error('user error', err);
@@ -140,5 +141,33 @@ module.exports =
           });
         });
       });      
+    },
+    checkout: async (req, res, next) =>
+    {
+      var userName = req.session.user;
+      User.findOne({ username: userName }, (err, user) => {
+        if(err) {
+          console.error('user error', err);
+          return next(err.message);
+        }
+        if(!user) {
+          console.log('user not found');
+          return next('user not found');
+        }
+        Cart.deleteMany({
+          user: user._id,
+        }, function(err, cart) {
+          if (err) {
+            console.error('cart error', err);
+            return next(err);
+          }
+
+          res.status(201).json({
+            err: null,
+            msg: 'Checkout successful.',
+            data: cart
+          });
+        });
+      });
     },
 }
