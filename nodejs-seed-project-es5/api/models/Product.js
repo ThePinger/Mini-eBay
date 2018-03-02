@@ -103,3 +103,6 @@ Product.create({name: '193 Lockpicks', price:'193', seller:'Ahmed Hatem'});
 Product.create({name: 'Samsung', price:'5000', seller:'Akram Ashraf'});
 Product.create({name: 'Oneplus', price:'8000', seller:'Akram Ashraf'});
 Product.create({name: 'Rolex', price:'12000', seller:'Akram Ashraf'});
+Product.create({name: 'Converse',price:'1500',seller:'Malak Hatem'});
+Product.create({name: 'Vans',price:'900',seller:'Malak Hatem'});
+Product.create({name: 'Pizza',price:'250',seller:'Malak Hatem'});
