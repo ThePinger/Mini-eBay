@@ -12,9 +12,11 @@ import { ParentComponent } from './parent/parent.component';
 import { DefaultComponent } from './default/default.component';
 import { AuthService } from './service/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonRenderComponent } from './button-render/button-render.component';
+import { SearchFieldsComponent } from './search-fields/search-fields.component';
 
 @NgModule({
-  declarations: [AppComponent, ParentComponent, DefaultComponent],
+  declarations: [AppComponent, ParentComponent, DefaultComponent, ButtonRenderComponent, SearchFieldsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -23,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
+  entryComponents:[ButtonRenderComponent,],
   bootstrap: [AppComponent],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }, AuthService]
 })
