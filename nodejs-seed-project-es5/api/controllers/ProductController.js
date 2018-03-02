@@ -2,6 +2,8 @@ var mongoose = require('mongoose'),
   moment = require('moment'),
   Validations = require('../utils/Validations'),
   Product = mongoose.model('Product');
+  var User = mongoose.model('User');
+
 
 module.exports.getProduct = function(req, res, next) {
   if (!Validations.isObjectId(req.params.productId)) {
@@ -84,15 +86,26 @@ module.exports.createProduct = function(req, res, next) {
   // Security Check
   delete req.body.createdAt;
   delete req.body.updatedAt;
-
-  Product.create(req.body, function(err, product) {
-    if (err) {
-      return next(err);
+  var seller = req.session.user;
+  User.findOne({ username: seller }, (err, user) => {
+    if(err) {
+      console.error('user error', err);
+      return next(err.message);
     }
-    res.status(201).json({
-      err: null,
-      msg: 'Product was created successfully.',
-      data: product
+    if(!user) {
+      console.log('user not found');
+      return next('user not found');
+    }
+    req.body.seller = user.username;
+    Product.create(req.body, function(err, product) {
+      if (err) {
+        return next(err);
+      }
+      res.status(201).json({
+        err: null,
+        msg: 'Product was created successfully.',
+        data: product
+      });
     });
   });
 };
