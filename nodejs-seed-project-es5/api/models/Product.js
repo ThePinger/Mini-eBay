@@ -48,3 +48,9 @@ Product.create({name: 'Football boots', price:'300', seller:'Youssam Joseph'});
 Product.create({name: 'MacBook Pro', price:'27000', seller:'David Mina'});
 Product.create({name: 'iPhone 8 Plus', price:'16000', seller:'David Mina'});
 Product.create({name: 'Power Bank', price:'650', seller:'David Mina'});
+
+Product.create({name: 'Mr.potato Head', price:'9000', seller:'Amr Elshehaly'});
+Product.create({name: 'Mrs.potato Head', price:'1', seller:'Mr.potato Head'});
+Product.create({name: 'Woody', price:'12000', seller:'Amr Elshehaly'});
+
+
