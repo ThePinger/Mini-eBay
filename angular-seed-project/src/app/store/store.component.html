@@ -1,11 +1,60 @@
 <nb-card _ngcontent-c31="" _nghost-c23="">
-
-  <nb-card-body _ngcontent-c31="">
-    <tr>
-      <th>ahmed</th>
-
-    </tr>
-
-
-  </nb-card-body>
-</nb-card>
+    
+  
+<!--     
+        <head>
+          <title>Products</title>
+        </head>
+        <body>
+          <div class="container" ng-controller="AppCtrl">
+          <h1>Products</h1>
+           -->
+       
+      <!-- <div class="row well">
+        <div _ngcontent-c12="" class="col-sm-9">
+          <input _ngcontent-c12="" class="form-control" id="name" placeholder="Name" >
+        </div>
+        <div _ngcontent-c12="" class="col-sm-9">
+          <input _ngcontent-c12="" class="form-control" id="price" placeholder="Price" type="number">
+        </div>
+        <button type="button" class="btn btn-info pull-right" click="createProduct(name.value,price.value)"><i class="glyphicon glyphicon-plus">
+       </i> Add new product</button> -->
+      <!-- </div> -->
+      <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Seller Name</th>
+                <th>Actions</th>
+               
+              </tr>
+              <tr>
+                <!-- <th colspan="5"> -->
+                <!-- <input st-search placeholder="Search for a product" class="input-sm form-control" id ="pro"type="search" / > -->
+                <!-- </th> -->
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td> a </td>
+                <td> a</td>
+                <td> a</td>
+                <td> a</td>
+                
+                
+           
+                <td><button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"> ADD
+                  </i></button> 
+                  <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"> Edit
+                </i></button>  <button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil">Delete
+                </i></button> </td>
+              </tr>
+      </tbody>
+    </table>
+  </div>
+  
+       
+  </nb-card>
