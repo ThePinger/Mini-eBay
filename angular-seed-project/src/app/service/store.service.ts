@@ -21,7 +21,7 @@ export class StoreService{
 
     }
     getProductsBelowPrice(price) {
-        return this.http.get('/product/getProductsBelowPrice/'+ price, {withCredentials: true});
+        return this.http.get(environment.apiUrl + '/product/getProductsBelowPrice/'+ price, {withCredentials: true});
     }
     deleteProduct(productId){
         return this.http.delete(environment.apiUrl + '/product/deleteProduct/' + productId, {withCredentials: true} );
